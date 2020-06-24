@@ -1,0 +1,29 @@
+﻿@page "/"
+
+@using SendSmsBlazor.Data
+@inject SmsService SmsService
+
+<h1>Send an SMS!</h1>
+
+Welcome to your new app Fill out the below form to send an SMS.
+<br />
+to:
+<input id="to" @bind="@To" class="input-group-text" />
+from:
+<input id="from" @bind="From" class="input-group-text" />
+text:
+<input id="text" @bind="Text" class="input-group-text" />
+<p>@MessageId</p>
+<button class="btn btn-primary" @onclick="SendSms">Send SMS</button>
+
+@code{
+    private string To;
+    private string From;
+    private string Text;
+    private string MessageId;
+    private void SendSms()
+    {
+        var response = SmsService.SendSms(To, From, Text);
+        MessageId = response.Messages[0].MessageId;
+    }
+}
