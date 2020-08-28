@@ -9,7 +9,7 @@ This demo shows how to send an Sms with Blazor.
 
 ## Configure
 
-Set the `NEXMO_API_KEY` and `NEXMO_API_SECRET` fields in the `appsettings.json` file with the appropriate fields from your [Dashboard.](https://dashboard.nexmo.com/)
+Set the `Vonage_API_KEY` and `Vonage_API_SECRET` fields in the `appsettings.json` file with the appropriate fields from your [Dashboard.](https://dashboard.nexmo.com/)
 
 ## Running the App
 

@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Configuration;
-using Nexmo.Api.Messaging;
-using Nexmo.Api.Request;
+using Vonage.Messaging;
+using Vonage.Request;
 
 namespace SendSmsBlazor.Data
 {
@@ -14,8 +14,8 @@ namespace SendSmsBlazor.Data
 
         public SendSmsResponse SendSms(string to, string from, string text)
         {
-            var apiKey = Configuration["NEXMO_API_KEY"];
-            var apiSecret = Configuration["NEXMO_API_SECRET"];
+            var apiKey = Configuration["VONAGE_API_KEY"];
+            var apiSecret = Configuration["VONAGE_API_SECRET"];
             var creds = Credentials.FromApiKeyAndSecret(apiKey,apiSecret);
             var client = new SmsClient(creds);
             var request = new SendSmsRequest
